@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: oklch(65.33% 0.1838 266.79); /* #5D87FF blueish-purple */
+  --color-secondary: oklch(76.32% 0.139 237.2); /* #49BEFF; pale-blue */
+  --color-bg: oklch(100% 0 0); /* #ffffff */
+  --color-bg-highlight: oklch(96.74% 0.019167 230.6894); /* #E8F7FF */
+  --color-text: oklch(32.7% 0.0355 260.11); /* #2A3547 */
+  --color-icon: oklch(32.7% 0.0355 260.11); /* #2A3547 */
+
+  --color-primary-dark: oklch(65.33% 0.1838 266.79); /* #5D87FF */
+  --color-secondary-dark: oklch(76.32% 0.139 237.2); /* #49BEFF */
+  --color-bg-dark: oklch(32.51% 0.0323 265.03); /* #2c3445 */
+  --color-bg-dark-highlight: oklch(34.23% 0.0804 266.33); /* #253662 */
+  --color-text-dark: oklch(64.54% 0.0488 258.74); /* #7C8FAC */
+  --color-icon-dark: oklch(64.54% 0.0488 258.74); /* #7C8FAC */
+}
+
+/* sets theme when device layout mode changes to dark */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-bg: var(--color-bg-dark);
+    --color-bg-highlight: var(--color-bg-dark-highlight);
+    --color-text: var(--color-text-dark);
+    --color-icon: var(--color-icon-dark);
+  }
+}
+
+/* sets theme when tailwind dark theme is selected to override device layout */
+.dark {
+  @theme {
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-bg: var(--color-bg-dark);
+    --color-bg-highlight: var(--color-bg-dark-highlight);
+    --color-text: var(--color-text-dark);
+    --color-icon: var(--color-icon-dark);
+  }
+}
+
+@layer components {
+  .text-primary {
+    color: oklch(var(--color-text));
+  }
+
+  .text-icon {
+    color: var(--color-icon);
+  }
+
+  /* .btn-secondary {
+    @apply border-2 border-gray-600 text-gray-600 dark:border-gray-400 dark:text-gray-100 dark:disabled:bg-gray-900;
+  }
+
+  .heading-sm {
+    @apply text-heading-content text-xl font-extrabold tracking-tight capitalize sm:text-2xl dark:filter;
+  }
+
+  .heading {
+    @apply text-heading-content text-2xl font-extrabold tracking-tight capitalize sm:truncate sm:text-3xl dark:filter;
+  }
+
+  .heading-lg {
+    @apply text-heading-content text-4xl font-extrabold tracking-tight capitalize md:text-5xl dark:filter;
+  }
+
+  .title-xs {
+    @apply text-heading-content text-xs font-medium tracking-tight dark:text-xs dark:font-medium dark:filter;
+  }
+
+  .title-sm {
+    @apply text-heading-content text-sm font-medium tracking-tight dark:text-sm dark:font-medium dark:filter;
+  }
+
+  .title {
+    @apply text-heading-content font-medium tracking-tight dark:font-medium dark:filter;
+  }
+
+  .title-lg {
+    @apply text-heading-content text-lg font-medium tracking-tight dark:text-lg dark:font-medium dark:filter;
+  }
+
+  .title-xl {
+    @apply text-heading-content text-xl font-medium tracking-tight sm:text-2xl dark:text-xl dark:font-medium dark:filter dark:sm:text-2xl;
+  } */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans';
+}

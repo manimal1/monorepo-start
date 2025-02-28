@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "bin",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "target": "es2021",
+    "incremental": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "checkJs": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": { "~/*": ["./src/*"], "~": ["./src/*"] }
+  },
+  "include": ["src/**/*", "prisma/index.ts", "prisma/seed.ts"],
+  "exclude": [
+    "src/__mocks__",
+    "src/services/__mocks__",
+    "src/db/__mocks__",
+    "src/rpc/__mocks__"
+  ],
+  "typedocOptions": {
+    "out": "./docs",
+    "readme": "./README.md",
+    "excludePrivate": true,
+    "includeVersion": true
+  },
+  "_moduleAliases": {
+    "~": "./bin/src"
+  }
+}

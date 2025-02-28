@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+dist
+public
+
+# Ignore all HTML files:
+**/*.html
+
+# Generated api files
+**/aisist-api-client

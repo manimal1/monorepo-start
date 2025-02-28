@@ -1,0 +1,13 @@
+/* 
+TS config for running builds. Sets proper root dir and removes sourceMap-s.
+Separate file is used so we can have tests and other forlders covered for linting, but excluded in compile time.
+*/
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/__mocks__/**"]
+}

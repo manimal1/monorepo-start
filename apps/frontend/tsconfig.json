@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/typescript-config/vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "paths": {
+      "~": ["./src"],
+      "~/*": ["./src/*"],
+      "__tests__/*": ["./src/__tests__/*"],
+      "__mocks__/*": ["./src/__mocks__/*"]
+    },
+    "types": ["vitest/globals"]
+  },
+  "include": ["vite.config.ts", "src", "e2e", "playwright.config.ts"]
+}

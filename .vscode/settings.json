@@ -1,0 +1,16 @@
+{
+  "eslint.workingDirectories": [
+    "./apps/*",
+    "./packages/forms/*",
+    "./packages/ui/*",
+    {
+      "mode": "auto",
+      "directory": "./apps/backend"
+    },
+    {
+      "mode": "auto",
+      "directory": "./apps/frontend"
+    }
+  ],
+  "css.lint.unknownAtRules": "ignore"
+}
